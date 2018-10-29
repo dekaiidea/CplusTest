@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "MinGW",
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:\\SDK\\MinGW64\\mingw64\\bin\\gcc.exe",
+            "includePath": [
+                "${workspaceFolder}",
+                "C:/SDK/boost_1_68_0",
+                "C:/SDK/opencv-3.4.1/build/install/include",
+                "C:/SDK/opencv-3.4.1/build/install/include/opencv",
+                "C:/SDK/opencv-3.4.1/build/install/include/opencv2"
+            ],
+            "defines": ["_DEBUG"],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "C:/SDK/boost_1_68_0",
+                    "C:/SDK/opencv-3.4.1/build/install/include",
+                    "C:/SDK/opencv-3.4.1/build/install/include/opencv",
+                    "C:/SDK/opencv-3.4.1/build/install/include/opencv2"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

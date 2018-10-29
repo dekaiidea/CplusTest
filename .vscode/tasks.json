@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "command": "g++",
+    "args": ["-g","${file}","-I","C:/SDK/boost_1_68_0",
+            "-I", "C:/SDK/opencv-3.4.1/build/install/include",
+            "-I", "C:/SDK/opencv-3.4.1/build/install/include/opencv",
+            "-I", "C:/SDK/opencv-3.4.1/build/install/include/opencv2",
+            "-L", "C:/SDK/opencv-3.4.1/build/install/x64/mingw/lib",
+            "-l", "libopencv_core341d",
+            "-l", "libopencv_imgproc341d",
+            "-l", "libopencv_video341d",
+            "-l", "libopencv_ml341d",
+            "-l", "libopencv_highgui341d",
+            "-l", "libopencv_objdetect341d",
+            "-l", "libopencv_flann341d",
+            "-l", "libopencv_imgcodecs341d",
+            "-l", "libopencv_photo341d",
+            "-l", "libopencv_videoio341d",
+            "-o","${fileBasenameNoExtension}.exe"
+        ],    // 编译命令参数
+    "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+        }
+    }
+}
