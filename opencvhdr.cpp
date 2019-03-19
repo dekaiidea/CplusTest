@@ -12,10 +12,10 @@ void loadExposureSeq(String, vector<Mat>&, vector<float>&);
 
 int main(int, char**argv)
 {
-    argv[1]="./SourceImages";
+    String path="./SourceImages";
     vector<Mat> images;
     vector<float> times;
-    loadExposureSeq(argv[1], images, times);
+    loadExposureSeq(path, images, times);
 
     Mat response;
     Ptr<CalibrateDebevec> calibrate = createCalibrateDebevec();
@@ -33,9 +33,13 @@ int main(int, char**argv)
     Ptr<MergeMertens> merge_mertens = createMergeMertens();
     merge_mertens->process(images, fusion);
 
-    imwrite("fusion.png", fusion * 255);
-    imwrite("ldr.png", ldr * 255);
-    imwrite("hdr.hdr", hdr);
+    int index = fusion.type();
+    fusion = fusion*255;
+    fusion.convertTo(fusion,CV_8U);
+    int index1 = fusion.type();
+    imwrite("./fusion.png", fusion);
+    imwrite("./ldr.png", ldr);
+    imwrite("./hdr.hdr", hdr);
     printf("all ready");
     return 0;
 }
